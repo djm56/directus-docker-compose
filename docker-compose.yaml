@@ -27,12 +27,12 @@ services:
       # By default, uploads are stored in /directus/uploads
       # Always make sure your volumes matches the storage root when using
       # local driver
-      - ${HOST_UPLOADS}:${STORAGE_LOCAL_ROOT}
-      - ./uploads:/directus/uploads
+      - ${HOST_UPLOADS}:${STORAGE_LOCAL_UPLOADS}
+      #- ./uploads:/directus/uploads
       # Make sure to also mount the volume when using SQLite
-      # - ./database:/directus/database
+      # - ${HOST_DATABASE}:${STORAGE_LOCAL_DATABASE}
       # If you want to load extensions from the host
-      # - ./extensions:/directus/extensions
+      # - ${HOST_EXTENSIONS}:${STORAGE_LOCAL_EXTENSIONS}
     networks:
       - ${NETWORK}
     # depends_on:
